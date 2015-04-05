@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/1.png</file>
+        <file>image/CD-icon.png</file>
+        <file>../icon/MediaPlayer/media-eject.png</file>
+        <file>../icon/MediaPlayer/media-playback-pause.png</file>
+        <file>../icon/MediaPlayer/media-playback-start.png</file>
+        <file>../icon/MediaPlayer/media-playback-stop.png</file>
+        <file>../icon/MediaPlayer/media-record.png</file>
+        <file>../icon/MediaPlayer/media-seek-backward.png</file>
+        <file>../icon/MediaPlayer/media-seek-forward.png</file>
+        <file>../icon/MediaPlayer/media-skip-backward.png</file>
+        <file>../icon/MediaPlayer/media-skip-forward.png</file>
+        <file>../icon/MediaPlayer/irc-unvoice.png</file>
+        <file>../icon/MediaPlayer/irc-voice.png</file>
+        <file>../icon/MediaPlayer/application-exit.png</file>
+        <file>../icon/MediaPlayer/document-close.png</file>
+        <file>../icon/MediaPlayer/document-new.png</file>
+        <file>../icon/MediaPlayer/document-open.png</file>
+        <file>../icon/MediaPlayer/document-open-folder.png</file>
+        <file>../icon/MediaPlayer/document-open-recent.png</file>
+        <file>../icon/MediaPlayer/document-open-remote.png</file>
+        <file>../icon/MediaPlayer/download.png</file>
+        <file>../icon/MediaPlayer/tab-close.png</file>
+        <file>../icon/MediaPlayer/tab-new-background.png</file>
+        <file>../icon/MediaPlayer/edit-rename.png</file>
+        <file>../icon/MediaPlayer/vk.png</file>
+    </qresource>
+</RCC>

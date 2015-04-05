@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D0C81E5E-8C02-31EE-88B1-7C87E934D368}</ProjectGuid>
+    <RootNamespace>untitled52</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>untitled52</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>untitled52</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">untitled52</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">untitled52</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\libs\id3lib\bin\include;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore;release;.;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WEBKITWIDGETS_LIB;QT_QUICK_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WEBKIT_LIB;QT_QML_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;QT_POSITIONING_LIB;QT_SENSORS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\qtmain.lib;$(QTDIR)\lib\Qt5Core.lib;C:\Qt\untitled52vs\..\..\..\libs\SystemDynamicLib_x86\\id3lib.lib;$(QTDIR)\lib\Qt5WebKitWidgets.lib;$(QTDIR)\lib\Qt5Quick.lib;$(QTDIR)\lib\Qt5MultimediaWidgets.lib;$(QTDIR)\lib\Qt5OpenGL.lib;$(QTDIR)\lib\Qt5PrintSupport.lib;$(QTDIR)\lib\Qt5WebKit.lib;$(QTDIR)\lib\Qt5Qml.lib;$(QTDIR)\lib\Qt5Multimedia.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5WinExtras.lib;$(QTDIR)\lib\Qt5Positioning.lib;$(QTDIR)\lib\Qt5Sensors.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;$(QTDIR)\lib;C:\Qt\untitled52vs\..\..\..\libs\SystemDynamicLib_x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\untitled52.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WEBKITWIDGETS_LIB;QT_QUICK_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WEBKIT_LIB;QT_QML_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;QT_POSITIONING_LIB;QT_SENSORS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\libs\id3lib\bin\include;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore;debug;.;..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WEBKITWIDGETS_LIB;QT_QUICK_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WEBKIT_LIB;QT_QML_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;QT_POSITIONING_LIB;QT_SENSORS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\qtmaind.lib;$(QTDIR)\lib\Qt5Cored.lib;C:\Qt\untitled52vs\..\..\..\libs\SystemDynamicLib_x86\\id3lib.lib;$(QTDIR)\lib\Qt5WebKitWidgetsd.lib;$(QTDIR)\lib\Qt5Quickd.lib;$(QTDIR)\lib\Qt5MultimediaWidgetsd.lib;$(QTDIR)\lib\Qt5OpenGLd.lib;$(QTDIR)\lib\Qt5PrintSupportd.lib;$(QTDIR)\lib\Qt5WebKitd.lib;$(QTDIR)\lib\Qt5Qmld.lib;$(QTDIR)\lib\Qt5Multimediad.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5WinExtrasd.lib;$(QTDIR)\lib\Qt5Positioningd.lib;$(QTDIR)\lib\Qt5Sensorsd.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(QTDIR)\lib;$(QTDIR)\lib;C:\Qt\untitled52vs\..\..\..\libs\SystemDynamicLib_x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\untitled52.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WEBKITWIDGETS_LIB;QT_QUICK_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_OPENGL_LIB;QT_PRINTSUPPORT_LIB;QT_WEBKIT_LIB;QT_QML_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;QT_POSITIONING_LIB;QT_SENSORS_LIB;QT_NETWORK_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="contextmenuopenfile.cpp" />
+    <ClCompile Include="contextmenutabwidget.cpp" />
+    <ClCompile Include="Debug\moc_contextmenuopenfile.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_contextmenutabwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_dialogdeleteplaylist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_dialogrenameplaylist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_fileinfodialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mycondextmenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_myid3tegextractor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_myqlistwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_tracklistformat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_trackListMeneger.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_vkauth.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="dialogdeleteplaylist.cpp" />
+    <ClCompile Include="dialogrenameplaylist.cpp" />
+    <ClCompile Include="fileinfodialog.cpp" />
+    <ClCompile Include="GeneratedFiles\qrc_icon.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="mycondextmenu.cpp" />
+    <ClCompile Include="myid3tegextractor.cpp" />
+    <ClCompile Include="myqlistwidget.cpp" />
+    <ClCompile Include="Release\moc_contextmenuopenfile.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_contextmenutabwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_dialogdeleteplaylist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_dialogrenameplaylist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_fileinfodialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mycondextmenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_myid3tegextractor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_myqlistwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_tracklistformat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_trackListMeneger.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_vkauth.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="reparationFragment.cpp" />
+    <ClCompile Include="trackListMeneger.cpp" />
+    <ClCompile Include="tracklistformat.cpp" />
+    <ClCompile Include="vkauth.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="contextmenuopenfile.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing contextmenuopenfile.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing contextmenuopenfile.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="contextmenutabwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing contextmenutabwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing contextmenutabwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="dialogdeleteplaylist.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing dialogdeleteplaylist.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing dialogdeleteplaylist.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="dialogrenameplaylist.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing dialogrenameplaylist.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing dialogrenameplaylist.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="fileinfodialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing fileinfodialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing fileinfodialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mycondextmenu.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mycondextmenu.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mycondextmenu.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="myid3tegextractor.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing myid3tegextractor.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing myid3tegextractor.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="myqlistwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing myqlistwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing myqlistwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="GeneratedFiles\ui_dialogdeleteplaylist.h" />
+    <ClInclude Include="GeneratedFiles\ui_dialogrenameplaylist.h" />
+    <ClInclude Include="GeneratedFiles\ui_fileinfodialog.h" />
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_tracklistformat.h" />
+    <ClInclude Include="GeneratedFiles\ui_vkauth.h" />
+    <ClInclude Include="reparationFragment.h" />
+    <CustomBuild Include="trackListMeneger.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing trackListMeneger.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing trackListMeneger.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="tracklistformat.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing tracklistformat.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing tracklistformat.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="vkauth.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\release" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing vkauth.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WEBKITWIDGETS_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_OPENGL_LIB -DQT_PRINTSUPPORT_LIB -DQT_WEBKIT_LIB -DQT_QML_LIB -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_WINEXTRAS_LIB -DQT_POSITIONING_LIB -DQT_SENSORS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB  "-I.\..\..\..\libs\id3lib\bin\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKitWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQuick" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimediaWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtOpenGL" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPrintSupport" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWebKit" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtQml" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtMultimedia" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWidgets" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtWinExtras" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtPositioning" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtSensors" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtNetwork" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtGui" "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\include\QtCore" "-I.\debug" "-I." "-I.\..\..\qt\qt5.3.1vs2010\5.3\msvc2010_opengl\mkspecs\win32-msvc2010" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing vkauth.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="dialogdeleteplaylist.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="dialogrenameplaylist.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="fileinfodialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="tracklistformat.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="vkauth.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\1.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="image\CD-icon.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <CustomBuild Include="icon.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);.\image\1.png;.\image\CD-icon.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);.\image\1.png;.\image\CD-icon.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Qt5Version_x0020_Win32="5.3" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
