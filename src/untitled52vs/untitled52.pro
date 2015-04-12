@@ -33,7 +33,9 @@ SOURCES += main.cpp\
     fftvisualwidget.cpp \
     artistinfowiki.cpp \
     bufferengwindow.cpp \
-    playlistmeneger.cpp
+    playlistmeneger.cpp \
+    xmlplaylistmeneger.cpp \
+    progresswidget.cpp
 
 HEADERS  += mainwindow.h \
     trackListMeneger.h \
@@ -54,7 +56,9 @@ HEADERS  += mainwindow.h \
     fftvisualwidget.h \
     artistinfowiki.h \
     bufferengwindow.h \
-    playlistmeneger.h
+    playlistmeneger.h \
+    xmlplaylistmeneger.h \
+    progresswidget.h
 
 FORMS    += mainwindow.ui \
     tracklistformat.ui \
@@ -136,3 +140,5 @@ INCLUDEPATH += C:\libs\tags17\c
 DEPENDPATH +=  C:\libs\tags17\c
 
 OTHER_FILES +=
+
+DISTFILES +=

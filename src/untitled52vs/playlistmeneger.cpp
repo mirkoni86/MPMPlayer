@@ -9,9 +9,12 @@ PlaylistMeneger::PlaylistMeneger(QTabWidget *tabwgt, QWidget *parent) :
         элементы в m_mapPlaylist и m_mapPlaylistStringList имеют общий ключ
         которым являится имя плелиста
     */
-    m_mapPlaylist = new QMap<QString, MyQListWidget*>();
+    m_mapPlaylistListWidget = new QMap<QString, MyQListWidget*>();
     m_mapPlaylistStringList = new QMap<QString, QStringList*>();
+
     m_contextMenuItem = new MyCondextMenu(this);
+    connect(m_contextMenuItem, SIGNAL(signalFileInfo(int)), SLOT(slotViewInfoFile(int)));
+    //connect(m_contextMenuItem, SIGNAL(signalAddFileAtPlaylist())
 }
 
 PlaylistMeneger::~PlaylistMeneger()
@@ -25,11 +28,14 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
     MyQListWidget *listWidget = new MyQListWidget(this);
     listWidget->addItems(listElement);
     //Добавление плэйлиста в ассациативный контейнер
-    m_mapPlaylist->insert(listName, listWidget);
+    m_mapPlaylistListWidget->insert(listName, listWidget);
 
     //Контекстное меню, для плейлиста
     listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(listWidget, SIGNAL(customContextMenuRequested(QPoint)), SLOT(slotShowContextMenu(QPoint)));
+
+    //Если произойдит двойной клик по item- элементу MyQListWidget, значит воспроизвести
+    connect(listWidget, SIGNAL(activated(QModelIndex)), SLOT(slotClickItemPlaylistWidget(QModelIndex)));
 
     //Выделение памяти, под хранения адрессов трэков к плейлисту
     QStringList *stringList = new QStringList();
@@ -41,7 +47,7 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
     //В цикле формируются вид добовляемых элементов
     for(int i = 0; i < listElement.size(); ++i)
     {
-        listWidgetItem = m_mapPlaylist->value(listName)->item(i);
+        listWidgetItem = m_mapPlaylistListWidget->value(listName)->item(i);
         listWidgetItem->setSizeHint(QSize(100, 25));
         QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
         listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
@@ -53,15 +59,15 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
 void PlaylistMeneger::addElement(QStringList &listElement)
 {
     //Получает размер плэйлиста, пока не добалены новые элементы
-    const int LEN_OLD = m_mapPlaylist->value(m_keyCurrentPlaylist)->count();
+    const int LEN_OLD = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count();
     //Добавление новых элементов
-     m_mapPlaylist->value(m_keyCurrentPlaylist)->addItems(listElement);
+     m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->addItems(listElement);
     QListWidgetItem *listWidgetItem;
     //В цикле формируются вид добовляемых элементов
     //начало отсчета от старой длины до новой
-    for(int i = LEN_OLD - 1; i < m_mapPlaylist->value(m_keyCurrentPlaylist)->count(); ++i)
+    for(int i = LEN_OLD - 1; i < m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count(); ++i)
     {
-        listWidgetItem = m_mapPlaylist->value(m_keyCurrentPlaylist)->item(i);
+        listWidgetItem = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->item(i);
         listWidgetItem->setSizeHint(QSize(100, 25));
         QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
         listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
@@ -69,15 +75,25 @@ void PlaylistMeneger::addElement(QStringList &listElement)
     }
 }
 
+MyQListWidget *PlaylistMeneger::getPlaylistWidget(QString key)
+{
+    return m_mapPlaylistListWidget->value(key);
+}
+
+QStringList* PlaylistMeneger::getPlaylist(QString key)
+{
+    return m_mapPlaylistStringList->value(key);
+}
+
 void PlaylistMeneger::slotShowContextMenu(QPoint point)
 {
-    QListWidgetItem *item = m_mapPlaylist->value(m_keyCurrentPlaylist)->itemAt(point);
+    QListWidgetItem *item = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->itemAt(point);
 
     if(!item)
         return;
 
     m_contextMenuItem->SetFileAdress(item->text());
-    m_contextMenuItem->setIndexItem(m_mapPlaylist->value(m_keyCurrentPlaylist)->indexAt(point).row());
+    m_contextMenuItem->setIndexItem(m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->indexAt(point).row());
     m_contextMenuItem->exec(QCursor::pos());
 }
 
@@ -90,17 +106,17 @@ void PlaylistMeneger::slotViewInfoFile(int indexItem)
 
 void PlaylistMeneger::slotRemovePlaylist(int index)
 {
-    if(!m_mapPlaylist->size() || !m_mapPlaylistStringList->size())
+    if(!m_mapPlaylistListWidget->size() || !m_mapPlaylistStringList->size())
         return;
     //получаем имя удаляемого элемента QTabBar по индексу
     //index- это номер элемента QTabBar
     //tabText(i)- возвращает имя элемента QTabBar
     QString strKey = m_tabWidgetPlaylist->tabBar()->tabText(index);
     //Освобождение памяти
-    delete m_mapPlaylist->value(strKey);
+    delete m_mapPlaylistListWidget->value(strKey);
     delete m_mapPlaylistStringList->value(strKey);
     //Удаление ключей и их связей из ассацеативного контейнера
-    m_mapPlaylist->remove(strKey);
+    m_mapPlaylistListWidget->remove(strKey);
     m_mapPlaylistStringList->remove(strKey);
     //Удаление элемента QTabBar
     m_tabWidgetPlaylist->tabBar()->removeTab(index);
@@ -132,18 +148,18 @@ void PlaylistMeneger::slotRenamePlaylist(int index)
     QStringList *strlist = NULL;
 
     //Если такие ключи соществуют в ассациативных контейнерах
-    if(m_mapPlaylist->contains(oldName) && m_mapPlaylistStringList->contains(oldName))
+    if(m_mapPlaylistListWidget->contains(oldName) && m_mapPlaylistStringList->contains(oldName))
     {
         //Получить указатель на память плэйлиста и память списка треков
-        mql =  m_mapPlaylist->value(oldName);
+        mql =  m_mapPlaylistListWidget->value(oldName);
         strlist = m_mapPlaylistStringList->value(oldName);
 
         //Занести плейлист и список трэков в ассациативный контейнер,  под новым именем(ключом)
-        m_mapPlaylist->insert(newName, mql);
+        m_mapPlaylistListWidget->insert(newName, mql);
         m_mapPlaylistStringList->insert(newName, strlist);
 
         //Удалить из ассациативного контейнера старое имя(ключ)
-        m_mapPlaylist->remove(oldName);
+        m_mapPlaylistListWidget->remove(oldName);
         m_mapPlaylistStringList->remove(oldName);
     }
     else
@@ -156,4 +172,9 @@ void PlaylistMeneger::slotSetCurrentPlaylist(int index)
 {
     m_keyCurrentPlaylist =  m_tabWidgetPlaylist->tabBar()->tabText(index);
     m_indexCurrentPlaylist = index;
+}
+
+void PlaylistMeneger::slotClickItemPlaylistWidget(QModelIndex index)
+{
+    emit signalClickItemPlaylistWidget(index, *m_mapPlaylistStringList->value(m_keyCurrentPlaylist));
 }

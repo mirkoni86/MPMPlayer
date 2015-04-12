@@ -6,7 +6,8 @@ DialogRenamePlaylist::DialogRenamePlaylist(QTabWidget *tw, int index, QWidget *p
     ui(new Ui::DialogRenamePlaylist)
 {
     ui->setupUi(this);
-    setWindowTitle(tr("Переименовать"));
+    name = "";
+    setWindowTitle(tr("Имя плэлиста"));
     connect(ui->pushButtonRename, SIGNAL(clicked()), SLOT(slotRename()));
     connect(ui->pushButtonCancel, SIGNAL(clicked()), SLOT(close()));
 }
@@ -14,6 +15,11 @@ DialogRenamePlaylist::DialogRenamePlaylist(QTabWidget *tw, int index, QWidget *p
 DialogRenamePlaylist::~DialogRenamePlaylist()
 {
     delete ui;
+}
+
+QString DialogRenamePlaylist::newName()
+{
+    return name;
 }
 
 void DialogRenamePlaylist::slotRename()
@@ -24,6 +30,7 @@ void DialogRenamePlaylist::slotRename()
             QMessageBox::warning(this, tr("Внимание"), tr("Плэйлист с таким именем уже существует"));
             return;
         }
-    tabWidget->setTabText(indexTab, ui->lineEdit->text());
+    //tabWidget->setTabText(indexTab, ui->lineEdit->text());
+    name =  ui->lineEdit->text();
     close();
 }

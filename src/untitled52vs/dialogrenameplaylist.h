@@ -16,13 +16,15 @@ class DialogRenamePlaylist : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogRenamePlaylist(QTabWidget *tw, int index,QWidget *parent = 0);
+    explicit DialogRenamePlaylist(QTabWidget *tw, int index = 0,QWidget *parent = 0);
     ~DialogRenamePlaylist();
+    QString newName();
 public slots:
     void slotRename();
 private:
     Ui::DialogRenamePlaylist *ui;
     QTabWidget *tabWidget;
+    QString name;
     int indexTab;
 
 };

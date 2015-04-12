@@ -31,7 +31,7 @@
 #include "fftvisualwidget.h"
 #include "bufferengwindow.h"
 #include "playlistmeneger.h"
-
+#include "dialogrenameplaylist.h"
 
 
 namespace Ui {

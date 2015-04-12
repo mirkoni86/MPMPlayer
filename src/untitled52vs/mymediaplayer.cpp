@@ -101,7 +101,7 @@ QMap<QString, QString> MyMediaPlayer::audioTegReader(QString fileadress)
         fileadress.clear();
         fileadress.append(TAGS_Read( stream, "%UTF8(%ARTI)- %UTF8(%TITL)" ));
         audioTeg["Artist"] = QString(TAGS_Read(stream, "%UTF8(%ARTI)"));
-        audioTeg["Title"] = QString(TAGS_Read(stream, "%UTF8(%ARTI)"));
+        audioTeg["Title"] = QString(TAGS_Read(stream, "%UTF8(%TITL)"));
         audioTeg["Length"] = QString::number(BASS_ChannelBytes2Seconds(stream, BASS_ChannelGetLength(stream, BASS_POS_BYTE)));
     }
     return audioTeg;
