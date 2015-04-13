@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     bufferengwindow.cpp \
     playlistmeneger.cpp \
     xmlplaylistmeneger.cpp \
-    progresswidget.cpp
+    myqslider.cpp \
+    progressbarmusic.cpp
 
 HEADERS  += mainwindow.h \
     trackListMeneger.h \
@@ -58,7 +59,8 @@ HEADERS  += mainwindow.h \
     bufferengwindow.h \
     playlistmeneger.h \
     xmlplaylistmeneger.h \
-    progresswidget.h
+    myqslider.h \
+    progressbarmusic.h
 
 FORMS    += mainwindow.ui \
     tracklistformat.ui \

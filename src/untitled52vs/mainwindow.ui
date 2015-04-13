@@ -391,7 +391,7 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:0.479904 rgba(255, 0, 0, 255), stop:0.522685 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));</string>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -427,7 +427,7 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
       </widget>
      </item>
      <item>
-      <widget class="QSlider" name="horizontalSliderProgressPlay">
+      <widget class="MyQSlider" name="horizontalSliderProgressPlay">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -531,6 +531,13 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyQSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">myqslider.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="icon.qrc"/>
  </resources>

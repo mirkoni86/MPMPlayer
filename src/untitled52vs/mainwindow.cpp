@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_bufferengWindow = new BufferengWindow(this); //Окно отоброжающее ход буфферации
 
     m_trackLM->setPointTabWidget(ui->tabWidget);
+    ui->horizontalSliderProgressPlay;
 
 
     m_qiPositionPlay           = 0;
@@ -577,6 +578,8 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
+    if(event->pos().y() >= 15)
+        return;
         if(event->buttons() == Qt::LeftButton)
         {
             move( event->globalPos() - m_MouseEventDistance);
@@ -687,3 +690,4 @@ void MainWindow::slotSetReplayType() //СЛОТ
         settings.setValue("REALPLAY/ReplayType", 0);
     }
 }
+

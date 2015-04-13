@@ -86,6 +86,7 @@ signals:
     void signalPlayReparation(qint64 rep, ReparationFragment &repFrag);
 private slots:
     void setFormStyle();
+
 protected:
    virtual void  mousePressEvent(QMouseEvent *event);
    virtual void mouseMoveEvent(QMouseEvent *event);
