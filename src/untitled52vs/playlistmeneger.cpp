@@ -24,6 +24,14 @@ PlaylistMeneger::~PlaylistMeneger()
 
 void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
 {
+    QFile xmlPlaylist("Playlist/" +  listName + ".mpmp");
+    if(! xmlPlaylist.open(QIODevice::WriteOnly | QIODevice::ReadOnly) )
+    {
+        QMessageBox::critical(0, "Ошибка четения/записи", "Во время четения/записи файла " + listName + ".mpmp"
+                                                       ", произошла ошибка. " + xmlPlaylist.errorString());
+        throw QString(xmlPlaylist.errorString());
+    }
+
     //Выделение памяти, для хранения плэйлиста
     MyQListWidget *listWidget = new MyQListWidget(this);
     listWidget->addItems(listElement);
@@ -44,6 +52,11 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
     m_mapPlaylistStringList->insert(listName, stringList);
 
     QListWidgetItem *listWidgetItem;
+
+    XMLPlaylistMeneger::Writer xmlWriter(&xmlPlaylist);
+    xmlWriter.setAutoFormatting(true);
+    xmlWriter.writeStartDocument();
+
     //В цикле формируются вид добовляемых элементов
     for(int i = 0; i < listElement.size(); ++i)
     {
@@ -52,8 +65,23 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
         QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
         listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
         listWidgetItem->setIcon(QIcon(":/new/prefix1/image/1.png"));
+
+
+        xmlWriter.writeStartElement("File");
+        xmlWriter.writeCharacters(listElement.value(i));
+
+            xmlWriter.writeStartElement("Artist");
+            xmlWriter.writeCharacters(audioTeg["Artist"]);
+            xmlWriter.writeEndElement();
+
+            xmlWriter.writeStartElement("Title");
+            xmlWriter.writeCharacters(audioTeg["Title"]);
+            xmlWriter.writeEndElement();
+
+        xmlWriter.writeEndElement();
     }
 
+       xmlWriter.writeEndDocument();
 }
 
 void PlaylistMeneger::addElement(QStringList &listElement)

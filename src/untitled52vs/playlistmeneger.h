@@ -11,6 +11,7 @@
 #include "mycondextmenu.h"
 #include "fileinfodialog.h"
 #include "dialogrenameplaylist.h"
+#include "xmlplaylistmeneger.h"
 
 class PlaylistMeneger : public QWidget
 {

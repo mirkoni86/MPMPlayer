@@ -166,16 +166,26 @@ void MainWindow::slotOpenPlaylist() //СЛОТ
 
 //    m_bFlagPausePlay = 0;
 
-    QStringList tempList;
-    tempList.append(QFileDialog::getOpenFileNames(this, tr("Open File"), "D:\\Музыка", tr("Audio Files (*.mp3 *.flac *.wav *.wma *.amr *.m4a *.m4r);;All files (*.*)")));
-    if( ! tempList.size() )
-        return;
-
     DialogRenamePlaylist dialogName(ui->tabWidget, 0, 0);
     dialogName.exec();
     QString namePlaylist = dialogName.newName();
+    if(! namePlaylist.size())
+        return;
 
-    m_playlistMeneger->addPlaylist(tempList, namePlaylist);
+    QStringList tempList;
+    tempList.append(QFileDialog::getOpenFileNames(this, tr("Open File"), "D:\\Музыка", tr("Audio Files (*.mp3 *.flac *.wav *.wma *.amr *.m4a *.m4r);;All files (*.*)")));
+    if(! tempList.size() )
+        return;
+
+    try
+    {
+        m_playlistMeneger->addPlaylist(tempList, namePlaylist);
+    }
+    catch (QString err)
+    {
+        return;
+    }
+
     ui->tabWidget->addTab(m_playlistMeneger->getPlaylistWidget(namePlaylist), namePlaylist);
     m_fileListAdress->clear();
     m_fileListAdress->append(*m_playlistMeneger->getPlaylist(namePlaylist));

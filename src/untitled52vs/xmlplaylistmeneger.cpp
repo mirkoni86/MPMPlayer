@@ -12,7 +12,7 @@ XMLPlaylistMeneger::~XMLPlaylistMeneger()
 
 //---------------------------------------------------------------------------------------------------------
 //Реализация Reader
-XMLPlaylistMeneger::Reader::Reader(QString file, QObject *parent)
+XMLPlaylistMeneger::Reader::Reader(QIODevice *device) : QXmlStreamReader(device)
 {
 
 }
@@ -24,7 +24,7 @@ XMLPlaylistMeneger::Reader::~Reader()
 //-----------------------------------------------------------------------------------------------------------
 //Реализация Writer
 
-XMLPlaylistMeneger::Writer::Writer(QString file, QObject *parent)
+XMLPlaylistMeneger::Writer::Writer(QIODevice *device) : QXmlStreamWriter(device)
 {
 
 }

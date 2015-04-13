@@ -2,6 +2,8 @@
 #define XMLPLAYLISTMENEGER_H
 
 #include <QObject>
+#include <QXmlStreamReader>
+#include <QXmlStreamWriter>
 
 class XMLPlaylistMeneger : public QObject
 {
@@ -10,16 +12,17 @@ public:
     explicit XMLPlaylistMeneger(QObject *parent = 0);
     ~XMLPlaylistMeneger();
 
-    class Reader : public QObject
+    class Reader : public QXmlStreamReader
     {
-        Reader(QString file, QObject *parent = 0);
+    public:
+        Reader(QIODevice *device);
         ~Reader();
     };
 
-    class Writer : public QObject
+    class Writer : public QXmlStreamWriter
     {
-
-        Writer(QString file, QObject *parent = 0);
+    public:
+        Writer(QIODevice *device);
         ~Writer();
     };
 
