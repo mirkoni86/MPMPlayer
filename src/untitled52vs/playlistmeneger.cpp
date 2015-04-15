@@ -36,7 +36,7 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
     MyQListWidget *listWidget = new MyQListWidget(this);
     listWidget->addItems(listElement);
     //Добавление плэйлиста в ассациативный контейнер
-    m_mapPlaylistListWidget->insert(listName, listWidget);
+    m_mapPlaylistListWidget->insert(listName, listWidget);;
 
     //Контекстное меню, для плейлиста
     listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -57,6 +57,8 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
     xmlWriter.setAutoFormatting(true);
     xmlWriter.writeStartDocument();
 
+    double totalDuration = 0.0; //Счетчик общей продолжительности(сек) всех треков
+
     //В цикле формируются вид добовляемых элементов
     for(int i = 0; i < listElement.size(); ++i)
     {
@@ -64,24 +66,41 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
         listWidgetItem->setSizeHint(QSize(100, 25));
         QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
         listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
+        totalDuration += audioTeg["Length"].toDouble();
         listWidgetItem->setIcon(QIcon(":/new/prefix1/image/1.png"));
 
 
-        xmlWriter.writeStartElement("File");
+        //Запись в плэйлист XML
+        xmlWriter.writeStartElement("File"); //Путь к файлу
         xmlWriter.writeCharacters(listElement.value(i));
 
-            xmlWriter.writeStartElement("Artist");
+            xmlWriter.writeStartElement("Artist"); //Имя артиста
             xmlWriter.writeCharacters(audioTeg["Artist"]);
             xmlWriter.writeEndElement();
 
-            xmlWriter.writeStartElement("Title");
+            xmlWriter.writeStartElement("Title"); //Название трэка
             xmlWriter.writeCharacters(audioTeg["Title"]);
+            xmlWriter.writeEndElement();
+
+            xmlWriter.writeStartElement("Length"); //Длина трэка
+            xmlWriter.writeCharacters(audioTeg["Length"]);
             xmlWriter.writeEndElement();
 
         xmlWriter.writeEndElement();
     }
 
-       xmlWriter.writeEndDocument();
+    //Записать дополнительную информацию в конец файла
+    xmlWriter.writeStartElement("MPMPlayerInfoPlaylist");
+        xmlWriter.writeStartElement("Count"); //Количество трэфков в плэфлисте
+        xmlWriter.writeCharacters(QString::number(listElement.size()));
+        xmlWriter.writeEndElement();
+        xmlWriter.writeStartElement("TotalDuration"); //общая продолжитедьность(сек)
+        xmlWriter.writeCharacters(QString::number(totalDuration));
+        xmlWriter.writeEndElement();
+    xmlWriter.writeEndElement();
+
+    xmlWriter.writeEndDocument();
+    xmlPlaylist.close();
 }
 
 void PlaylistMeneger::addElement(QStringList &listElement)
