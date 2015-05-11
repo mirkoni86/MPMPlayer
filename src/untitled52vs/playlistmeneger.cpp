@@ -13,7 +13,16 @@ PlaylistMeneger::PlaylistMeneger(QTabWidget *tabwgt, QWidget *parent) :
     m_mapPlaylistStringList = new QMap<QString, QStringList*>();
 
     m_contextMenuItem = new MyCondextMenu(this);
-    connect(m_contextMenuItem, SIGNAL(signalFileInfo(int)), SLOT(slotViewInfoFile(int)));
+    connect(m_contextMenuItem, SIGNAL(signalFileInfo(int)),
+                                                             SLOT(slotViewInfoFile(int)));
+    connect(m_contextMenuItem, SIGNAL(signalAddFileAddFileLocal()),
+                                                              SLOT(slotAddTrackLocal()));
+    connect(m_contextMenuItem, SIGNAL(signalAddFileAddFileLocalFolder()),
+                                                            SLOT(slotAddTrackFolder()));
+    connect(m_contextMenuItem, SIGNAL(signalAddFileAddFileVk()),
+                                                            SLOT(slotAddTrackVk()));\
+    connect(m_contextMenuItem, SIGNAL(signalAddFileAddFileNetwork()),
+                                                              SLOT(slotAddTrackNetwork()));
     //connect(m_contextMenuItem, SIGNAL(signalAddFileAtPlaylist())
 }
 
@@ -51,24 +60,63 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
     //Добаление списка треков в асоциативный контейнер
     m_mapPlaylistStringList->insert(listName, stringList);
 
-    QListWidgetItem *listWidgetItem;
+    formingViewPlaylist(xmlPlaylist, listElement, listName);
+}
+void PlaylistMeneger::xmlPlaylistReaderTest(QFile *file)
+{
+    file->open(QIODevice::ReadOnly);
 
+    QXmlStreamReader xmlReader(file);
+    while(! xmlReader.atEnd() )
+    {
+        if(xmlReader.isStartElement())
+        {
+            if(xmlReader.name() == "File")
+            {
+                qDebug() << xmlReader.text();
+                xmlReader.readNext();
+            }
+            if(xmlReader.name() == "Artist")
+            {
+                qDebug() << xmlReader.text();
+                xmlReader.readNext();
+            }
+            if(xmlReader.name() == "Title")
+            {
+                qDebug() << xmlReader.text();
+                xmlReader.readNext();
+            }
+            if(xmlReader.name() == "Length")
+            {
+                qDebug() << xmlReader.text();
+                xmlReader.readNext();
+            }
+            xmlReader.readNext();
+        }
+    }
+    file->close();
+}
+
+void PlaylistMeneger::formingViewPlaylist(QFile &xmlPlaylist, QStringList &listElement, QString listName, int begin)
+{
+    QListWidgetItem *listWidgetItem;
     XMLPlaylistMeneger::Writer xmlWriter(&xmlPlaylist);
     xmlWriter.setAutoFormatting(true);
     xmlWriter.writeStartDocument();
 
+     qDebug() << "formingViewPlaylistZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ" ;
     double totalDuration = 0.0; //Счетчик общей продолжительности(сек) всех треков
 
     //В цикле формируются вид добовляемых элементов
-    for(int i = 0; i < listElement.size(); ++i)
+    for(int i = begin; i < listElement.size(); ++i)
     {
+        qDebug() << "formingViewPlaylist: for: "  << i;
         listWidgetItem = m_mapPlaylistListWidget->value(listName)->item(i);
         listWidgetItem->setSizeHint(QSize(100, 25));
         QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
         listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
         totalDuration += audioTeg["Length"].toDouble();
         listWidgetItem->setIcon(QIcon(":/new/prefix1/image/1.png"));
-
 
         //Запись в плэйлист XML
         xmlWriter.writeStartElement("File"); //Путь к файлу
@@ -91,7 +139,7 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
 
     //Записать дополнительную информацию в конец файла
     xmlWriter.writeStartElement("MPMPlayerInfoPlaylist");
-        xmlWriter.writeStartElement("Count"); //Количество трэфков в плэфлисте
+        xmlWriter.writeStartElement("Count"); //Количество трэков в плэйлисте
         xmlWriter.writeCharacters(QString::number(listElement.size()));
         xmlWriter.writeEndElement();
         xmlWriter.writeStartElement("TotalDuration"); //общая продолжитедьность(сек)
@@ -101,25 +149,30 @@ void PlaylistMeneger::addPlaylist(QStringList listElement, QString listName)
 
     xmlWriter.writeEndDocument();
     xmlPlaylist.close();
+    //xmlPlaylistReaderTest( &xmlPlaylist );
 }
 
 void PlaylistMeneger::addElement(QStringList &listElement)
 {
-    //Получает размер плэйлиста, пока не добалены новые элементы
-    const int LEN_OLD = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count();
-    //Добавление новых элементов
-     m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->addItems(listElement);
-    QListWidgetItem *listWidgetItem;
-    //В цикле формируются вид добовляемых элементов
-    //начало отсчета от старой длины до новой
-    for(int i = LEN_OLD - 1; i < m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count(); ++i)
-    {
-        listWidgetItem = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->item(i);
-        listWidgetItem->setSizeHint(QSize(100, 25));
-        QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
-        listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
-        listWidgetItem->setIcon(QIcon(":/new/prefix1/image/1.png"));
-    }
+//    //Получает размер плэйлиста, пока не добалены новые элементы
+//    const int LEN_OLD = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count();
+//    //Добавление новых элементов
+//     m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->addItems(listElement);
+//    QListWidgetItem *listWidgetItem;
+//    //В цикле формируются вид добовляемых элементов
+//    //начало отсчета от старой длины до новой
+//    for(int i = LEN_OLD - 1; i < m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count(); ++i)
+//    {
+//        listWidgetItem = m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->item(i);
+//        listWidgetItem->setSizeHint(QSize(100, 25));
+//        QMap<QString, QString> audioTeg =  MyMediaPlayer::audioTegReader(listElement.at(i));
+//        listWidgetItem->setText(audioTeg["Artist"] + "- " + audioTeg["Title"]);
+//        listWidgetItem->setIcon(QIcon(":/new/prefix1/image/1.png"));
+//    }
+
+
+
+
 }
 
 MyQListWidget *PlaylistMeneger::getPlaylistWidget(QString key)
@@ -131,6 +184,7 @@ QStringList* PlaylistMeneger::getPlaylist(QString key)
 {
     return m_mapPlaylistStringList->value(key);
 }
+
 
 void PlaylistMeneger::slotShowContextMenu(QPoint point)
 {
@@ -225,3 +279,45 @@ void PlaylistMeneger::slotClickItemPlaylistWidget(QModelIndex index)
 {
     emit signalClickItemPlaylistWidget(index, *m_mapPlaylistStringList->value(m_keyCurrentPlaylist));
 }
+
+void PlaylistMeneger::slotAddTrackLocal()
+{
+    QStringList tempList;
+    tempList.append(QFileDialog::getOpenFileNames(this, tr("Open File"), "D:\\Музыка", tr("Audio Files (*.mp3 *.flac *.wav *.wma *.amr *.m4a *.m4r);;All files (*.*)")));
+    if(! tempList.size() )
+        return;
+    QFile xmlPlaylist("Playlist/" +  m_keyCurrentPlaylist + ".mpmp");
+    if(! xmlPlaylist.open(QIODevice::ReadOnly | QIODevice::WriteOnly))
+    {
+        QMessageBox::critical(0, "Ошибка четения/записи", "Во время четения/записи файла " + m_keyCurrentPlaylist + ".mpmp"
+                                                       ", произошла ошибка. " + xmlPlaylist.errorString());
+       return;
+    }
+    m_mapPlaylistStringList->value(m_keyCurrentPlaylist)->append(tempList);
+    m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->addItems(tempList);
+    emit signalAddNewTrack(tempList);
+    formingViewPlaylist(xmlPlaylist,
+                                           *m_mapPlaylistStringList->value(m_keyCurrentPlaylist),
+                                           m_keyCurrentPlaylist,
+                                           m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->count() - 1 - tempList.size() - 1);
+    m_mapPlaylistListWidget->value(m_keyCurrentPlaylist)->update();
+    xmlPlaylist.close();
+
+}
+
+void PlaylistMeneger::slotAddTrackFolder()
+{
+
+}
+
+void PlaylistMeneger::slotAddTrackVk()
+{
+
+}
+
+void PlaylistMeneger::slotAddTrackNetwork()
+{
+
+}
+
+

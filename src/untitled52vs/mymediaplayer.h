@@ -42,7 +42,8 @@ public:
 signals:
     void signalDurationChange(QWORD pos);
     void signalGetLenght(QWORD slen);
-    void signalPlayPause(int type);
+    void signalPlayPause(int type); //Сообщает о воспроизведении или паузе
+    void signalStartPlay(QString file); //Сообщает о старте воспроизведения и файле который был воспроизведен
     void signalBufferengMediaStream(int); //Сообщает о начале или конце буверации потокового аудио
 
 public slots:

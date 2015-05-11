@@ -21,7 +21,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //-----------------------------------------------------------------------------------------
     m_ContextMenuTabWidget = new ContextMenuTabWidget(ui->tabWidget->tabBar() ,this);
     m_ContextMenuOpenFile = new ContextMenuOpenFile(ui->toolButtonOpenList);
+    m_contextMenuGlobal = new ContextMenuGlobal(this);
     m_audioEffectWindow = new AudioEffectWindow(this);
+    m_settingMenger = new SettingManager(this);
     //FFT Визуализатор
     m_fftvisualWidget = new FFTVisualWidget(this);
     ui->verticalLayoutFFTVisual->addWidget(m_fftvisualWidget);
@@ -39,9 +41,15 @@ MainWindow::MainWindow(QWidget *parent) :
     m_iReplayType              = 0;
 
 
-    ui->pushButonAlbumImage->setIcon(QIcon(":/new/prefix1/image/CD-icon.png"));
-    ui->pushButonAlbumImage->setIconSize(ui->pushButonAlbumImage->size());
+//    ui->pushButonAlbumImage->setIcon(QIcon(":/new/prefix1/image/CD-icon.png"));
+//    ui->pushButonAlbumImage->setIconSize(ui->pushButonAlbumImage->size());
 
+    //-----------------------------------------------------------------------------------------------------------------
+    //Упрвление контекстным меню для главного окна
+    setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(this, SIGNAL(customContextMenuRequested(QPoint)), SLOT(slotShowContextMenuGlobal(QPoint)));
+    connect(m_contextMenuGlobal, SIGNAL(signalPlayPause()), SLOT(slotPlayFile()));
+    connect(m_contextMenuGlobal, SIGNAL(signalSetting()), SLOT(slotShowSettingsWindow()));
     //-----------------------------------------------------------------------------------------------------------------
     //Управление контекстным меню для ui->tabwidget
     ui->tabWidget->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -94,6 +102,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
     connect(ui->tabWidget, SIGNAL(currentChanged(int)), m_trackLM, SLOT(setChenTabPos(int)));
     connect(ui->tabWidget, SIGNAL(currentChanged(int)), m_playlistMeneger, SLOT(slotSetCurrentPlaylist(int)));
+    connect(m_playlistMeneger, SIGNAL(signalAddNewTrack(QStringList)), SLOT(slotAddFileFileListAdress(QStringList)));
     //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
     connect(m_trackLM, SIGNAL(signalItemPosition(QModelIndex,QStringList)), SLOT(slotPlayFileList(QModelIndex,QStringList)));
     connect(m_playlistMeneger, SIGNAL(signalClickItemPlaylistWidget(QModelIndex,QStringList)),
@@ -105,6 +114,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(m_bassMediaPlayer, SIGNAL(signalDurationChange(QWORD)), SLOT(slotPositionProgress(QWORD)));
     connect(m_bassMediaPlayer, SIGNAL(signalPlayPause(int)), SLOT(slotChangeStatusPlayer(int)));
     connect(m_bassMediaPlayer, SIGNAL(signalPlayPause(int)), SLOT(slotShowWindowBuffereng(int)));
+    connect(m_bassMediaPlayer, SIGNAL(signalStartPlay(QString)), SLOT(slotLoadCover(QString)));
 
     //AudioEffectWindow
     connect(m_audioEffectWindow, SIGNAL(signalRemoveEffect(int)), m_bassMediaPlayer, SLOT(removeEffect(int)));
@@ -323,6 +333,11 @@ void MainWindow::slotPlayFileListBASS(QModelIndex x, QStringList str)
 
 //    }
 
+}
+
+void MainWindow::slotAddFileFileListAdress(QStringList list)
+{
+    m_fileListAdress->append(list );
 }
 
 void MainWindow::slotStopFile() //SLOT
@@ -562,18 +577,48 @@ void MainWindow::slotShowWindowBuffereng(int status)
     else m_bufferengWindow->close();
 }
 
-void MainWindow::setFormStyle()
+void MainWindow::slotShowSettingsWindow()
 {
-        setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+    m_settingMenger->show();
+}
 
-        // Включаем прозрачность главной формы...
-        setAttribute(Qt::WA_TranslucentBackground);
+void MainWindow::slotLoadCover(QString file)
+{
 
-        // Задаём параметры прозрачности...
-        QGraphicsDropShadowEffect* shadowEffect = new QGraphicsDropShadowEffect(this);
-        shadowEffect -> setBlurRadius(9.0);
-        shadowEffect -> setColor(QColor(0, 0, 0, 160));
-        shadowEffect -> setOffset(4.0);
+    if(file.size() <= 0)
+        return;
+
+    QString location = file.mid(0, 7);
+    if(location == "http://")
+        return;
+    if(location.mid(0, 6) == "ftp://" )
+        return;
+    QFileInfo finfo(file);
+    QDir dir(QFileInfo(file).absolutePath());
+    QStringList allDirFile(dir.entryList());
+    for(int i = 0; i < allDirFile.size(); i++)
+    {
+        //qDebug() << "i: " << dir.entryList().at(i);
+        if(  (allDirFile.at(i).compare(dir.absolutePath() + "/" +   "cover.jpg" )  )  ||
+              (allDirFile.at(i).toLower().compare( QString( dir.absolutePath() + "/" +   "cover.png").toLower()) == 0 )    )
+        {
+            QPixmap cover(  dir.absolutePath() + "/" +  allDirFile.at(i));
+            QGraphicsScene gc;
+            gc.addPixmap( cover);
+            qDebug() << "cover: " << dir.absolutePath() + "/" +  allDirFile.at(i);
+            ui->graphicsViewCover->setScene(&gc);
+
+        }
+    }
+
+
+
+}
+
+
+void MainWindow::slotShowContextMenuGlobal(QPoint point)
+{
+    m_contextMenuGlobal->exec(QCursor::pos());
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
@@ -597,15 +642,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
         }
 
         QMainWindow::mouseMoveEvent(event);
-}
-
-void MainWindow::paintEvent(QPaintEvent *event)
-{
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setPen(QPen(Qt::black, 13, Qt::SolidLine, Qt::RoundCap,Qt::MiterJoin));
-    painter.drawRect(0, 0, width(), 13);
-    QMainWindow::paintEvent(event);
 }
 
 void MainWindow::slotPreviousFile() //СЛОТ

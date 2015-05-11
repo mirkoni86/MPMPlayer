@@ -9,6 +9,8 @@
 
 #include <QWidget>
 #include <QSlider>
+#include <QStyleOptionSlider>
+#include <QMouseEvent>
 
 class ProgressBarMusic : public QSlider
 {

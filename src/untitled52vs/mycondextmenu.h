@@ -5,6 +5,7 @@
 #include <QMenu>
 #include <QDebug>
 #include <QObject>
+#include "contextmenuopenfile.h"
 class MyCondextMenu : public QMenu
 {
 
@@ -16,15 +17,18 @@ public:
     void setIndexItem(int index);
     int retIndexItem();
 signals:
+    void signalAddFileAddFileLocal();
+    void signalAddFileAddFileLocalFolder();
+    void signalAddFileAddFileVk();
+    void signalAddFileAddFileNetwork();
+
     void signalFileInfo(int index);
-    void signalAddFileAtPlaylist();
     void signalDeleteTrack();
     void signalOpenAtFileMeneger(int itemIndex);
     void signalSort();
     void signalInfoAutor(int);
 private  slots:
     void slotFileInfo();
-    void  slotAddFileAtPlaylist();
     void slotDeleteTrack();
     void slotOpenAtFileMeneger();
     void slotSort();

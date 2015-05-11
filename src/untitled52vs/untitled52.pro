@@ -36,7 +36,9 @@ SOURCES += main.cpp\
     playlistmeneger.cpp \
     xmlplaylistmeneger.cpp \
     myqslider.cpp \
-    progressbarmusic.cpp
+    progressbarmusic.cpp \
+    settingmanager.cpp \
+    contextmenuglobal.cpp
 
 HEADERS  += mainwindow.h \
     trackListMeneger.h \
@@ -60,7 +62,9 @@ HEADERS  += mainwindow.h \
     playlistmeneger.h \
     xmlplaylistmeneger.h \
     myqslider.h \
-    progressbarmusic.h
+    progressbarmusic.h \
+    settingmanager.h \
+    contextmenuglobal.h
 
 FORMS    += mainwindow.ui \
     tracklistformat.ui \
@@ -72,7 +76,8 @@ FORMS    += mainwindow.ui \
     windowplaylist.ui \
     fftvisualwidget.ui \
     artistinfowiki.ui \
-    bufferengwindow.ui
+    bufferengwindow.ui \
+    settingmanager.ui
 
 RESOURCES += \
     icon.qrc

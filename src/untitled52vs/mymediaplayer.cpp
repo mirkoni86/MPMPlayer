@@ -160,6 +160,7 @@ void MyMediaPlayer::play()
             _length = getLength(); //Присваемаем длину трека
             emit signalGetLenght(_length);
             emit signalPlayPause(PLAY);
+            emit signalStartPlay(_fileAdress);
 
             if(_timerProgressPlay->isActive())
                 _timerProgressPlay->stop();

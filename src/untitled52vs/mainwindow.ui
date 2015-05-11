@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>317</width>
-    <height>531</height>
+    <width>628</width>
+    <height>304</height>
    </rect>
   </property>
   <property name="baseSize">
@@ -32,9 +32,14 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-* { background-color: rgba(104, 104, 104, 255); }
-QLineEdit, QPushButton, QToolButton { border-radius: 10px; } 
+   <string notr="true">background-color: rgb(86, 86, 86);
+
+/*  QLineEdit, QPushButton, QToolButton { border-radius: 10px; } */ 
+
+
+/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(42, 42, 42, 255), stop:0.00142045 rgba(42, 42, 42, 255), stop:0.0254237 rgba(42, 42, 42, 255), stop:0.0536723 rgba(117, 117, 117, 255)); */
+
+
 </string>
   </property>
   <property name="iconSize">
@@ -62,26 +67,6 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QToolButton" name="toolButtonOpenList">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>190</y>
-      <width>36</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Открыть...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/new/prefix1/icon/MediaPlayer/media-eject.png</normaloff>:/new/prefix1/icon/MediaPlayer/media-eject.png</iconset>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonNextFile">
     <property name="geometry">
      <rect>
@@ -91,12 +76,18 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
       <height>19</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset resource="icon.qrc">
       <normaloff>:/new/prefix1/icon/MediaPlayer/media-skip-forward.png</normaloff>:/new/prefix1/icon/MediaPlayer/media-skip-forward.png</iconset>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonPreviousFile">
@@ -108,12 +99,18 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
       <height>19</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset resource="icon.qrc">
       <normaloff>:/new/prefix1/icon/MediaPlayer/media-skip-backward.png</normaloff>:/new/prefix1/icon/MediaPlayer/media-skip-backward.png</iconset>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonPause">
@@ -125,12 +122,18 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
       <height>19</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset resource="icon.qrc">
       <normaloff>:/new/prefix1/icon/MediaPlayer/media-playback-stop.png</normaloff>:/new/prefix1/icon/MediaPlayer/media-playback-stop.png</iconset>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonPlay">
@@ -145,6 +148,9 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
     <property name="toolTip">
      <string/>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -152,54 +158,17 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      <iconset resource="icon.qrc">
       <normaloff>:/new/prefix1/icon/MediaPlayer/media-playback-start.png</normaloff>:/new/prefix1/icon/MediaPlayer/media-playback-start.png</iconset>
     </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonReplayType">
-    <property name="geometry">
-     <rect>
-      <x>49</x>
-      <y>190</y>
-      <width>61</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Режимы повтора&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Rep NO</string>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="default">
-     <bool>false</bool>
-    </property>
     <property name="flat">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>220</y>
+      <x>320</x>
+      <y>20</y>
       <width>301</width>
-      <height>301</height>
+      <height>271</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -209,7 +178,39 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+     <string notr="true">  * {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+     border: 2px solid #C4C4C3;
+     border-bottom-color: #C2C7CB; 
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+     min-width: 8ex;
+     padding: 2px;
+} 
+/*
+ QScrollBar:horizontal {
+     border: 2px solid green;
+     background: #32CC99;
+     height: 15px;
+     margin: 0px 20px 0 20px;
+ }
+*/
+
+
+ QTabWidget::pane { /* Рамка виджета со вкладками */
+     border-top: 2px solid #ff00ff;
+ }
+
+ QTabWidget::tab-bar {
+     left: 5px; /* сдвигаем вправо на 5px */
+ }
+
+ /* Применяем стиль ко вкладке используя субэлемент управления tab. Обратите внимание на то, что
+     оно читается как QTabBar, а _не_ QTabWidget */
+ QTabBar::tab {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
                                  stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
      border: 2px solid #C4C4C3;
@@ -218,8 +219,24 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      border-top-right-radius: 4px;
      min-width: 8ex;
      padding: 2px;
+ }
 
-</string>
+ QTabBar::tab:selected, QTabBar::tab:hover {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                 stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+ }
+
+ QTabBar::tab:selected {
+     border-color: #9B9B9B;
+     border-bottom-color: #C2C7CB; /* такой же цвет как у панели */
+ }
+
+ QTabBar::tab:!selected {
+     margin-top: 2px; /* делаем невыбранные вкладки меньше */
+ }
+
+ </string>
     </property>
     <property name="tabPosition">
      <enum>QTabWidget::North</enum>
@@ -263,6 +280,9 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
       <height>19</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -270,103 +290,6 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      <iconset resource="icon.qrc">
       <normaloff>:/new/prefix1/icon/MediaPlayer/irc-voice.png</normaloff>:/new/prefix1/icon/MediaPlayer/irc-voice.png</iconset>
     </property>
-   </widget>
-   <widget class="QPushButton" name="pushButonAlbumImage">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>50</y>
-      <width>127</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonABReparation">
-    <property name="geometry">
-     <rect>
-      <x>109</x>
-      <y>190</y>
-      <width>36</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>AB</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>20</y>
-      <width>181</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="labelMusicName">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelMusicAutor">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelMusicGenre">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelMusicYear">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelMusicAlbum">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="QLabel" name="labelSoundVolume">
     <property name="geometry">
@@ -391,7 +314,20 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:0.479904 rgba(255, 0, 0, 255), stop:0.522685 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));</string>
+     <string notr="true"> QSlider::groove:horizontal {
+     border: 1px solid #999999;
+     height: 8px; /* по умолчанию бороздка расширяется до размеров ползунка. задав высоту она принимает фиксированный размер */
+     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+     margin: 2px 0;
+ }
+
+ QSlider::handle:horizontal {
+     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+     border: 1px solid #5c5c5c;
+     width: 18px;
+     margin: -2px 0; /* рукоятка располагается по умолчанию в прямоугольнике содержимого бороздки. Расширяется наружу от бороздки */
+     border-radius: 3px;
+ }</string>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -400,32 +336,19 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>9</x>
+      <x>10</x>
       <y>130</y>
       <width>301</width>
       <height>23</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
      <property name="spacing">
       <number>6</number>
      </property>
      <property name="sizeConstraint">
       <enum>QLayout::SetDefaultConstraint</enum>
      </property>
-     <item>
-      <widget class="QLabel" name="labelTimeCome">
-       <property name="maximumSize">
-        <size>
-         <width>31</width>
-         <height>21</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>0:00</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="MyQSlider" name="horizontalSliderProgressPlay">
        <property name="enabled">
@@ -438,7 +361,22 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true"> QSlider::groove:horizontal {
+     background: red;
+	height: 10px;
+     position: absolute; /* абсолютная позиция в 4px слева и справа от виджета. установка полей виджета также будет работать... */
+     left: 4px; right: 4px;
+ }
+
+
+
+ QSlider::add-page:horizontal {
+     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+ }
+
+ QSlider::sub-page:horizontal {
+     background: #999999;
+ }</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -455,9 +393,13 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
        </property>
        <property name="maximumSize">
         <size>
-         <width>31</width>
-         <height>21</height>
+         <width>33</width>
+         <height>33</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/*font: 28pt &quot;DS Crystal&quot;;
+color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 0, 255), stop:0.488636 rgba(255, 255, 0, 255), stop:1 rgba(0, 255, 0, 255));*/</string>
        </property>
        <property name="text">
         <string>0:00</string>
@@ -469,7 +411,7 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
    <widget class="QPushButton" name="pushButtonWindowClose">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>600</x>
       <y>0</y>
       <width>21</width>
       <height>20</height>
@@ -483,25 +425,12 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
       <normaloff>:/new/prefix1/icon/MediaPlayer/application-exit.png</normaloff>:/new/prefix1/icon/MediaPlayer/application-exit.png</iconset>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonShowWindowAudioEffect">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>190</y>
-      <width>36</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eff</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>111</width>
+      <width>101</width>
       <height>101</height>
      </rect>
     </property>
@@ -511,23 +440,371 @@ QLineEdit, QPushButton, QToolButton { border-radius: 10px; }
      </property>
     </layout>
    </widget>
-   <zorder>layoutWidget</zorder>
-   <zorder>toolButtonOpenList</zorder>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>301</width>
+      <height>103</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QGraphicsView" name="graphicsViewCover">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>101</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="labelMusicName">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>179</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelMusicAutor">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>179</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelMusicGenre">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>179</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelMusicYear">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>179</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelMusicAlbum">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>179</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>191</width>
+      <height>95</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);</string>
+    </property>
+    <widget class="QLabel" name="labelTimeCome">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>0</y>
+       <width>90</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>90</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 40pt &quot;DS Crystal&quot;;
+/*
+color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 0, 255), stop:0.488636 rgba(255, 255, 0, 255), stop:1 rgba(0, 255, 0, 255));
+*/
+color: #999999;</string>
+     </property>
+     <property name="text">
+      <string>0:00</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>50</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="pushButtonReplayType">
+        <property name="minimumSize">
+         <size>
+          <width>32</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>54</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Режимы повтора&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Rep NO</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButtonOpenList">
+        <property name="minimumSize">
+         <size>
+          <width>32</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Открыть...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icon.qrc">
+          <normaloff>:/new/prefix1/icon/MediaPlayer/media-eject.png</normaloff>:/new/prefix1/icon/MediaPlayer/media-eject.png</iconset>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>70</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="pushButtonShowWindowAudioEffect">
+        <property name="minimumSize">
+         <size>
+          <width>32</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>45</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Eff</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonABReparation">
+        <property name="minimumSize">
+         <size>
+          <width>45</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>45</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>45</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>AB</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <zorder>labelTimeCome</zorder>
+    <zorder>horizontalLayoutWidget_2</zorder>
+    <zorder>horizontalLayoutWidget_2</zorder>
+    <zorder>horizontalLayoutWidget_3</zorder>
+   </widget>
    <zorder>pushButtonNextFile</zorder>
    <zorder>pushButtonPreviousFile</zorder>
    <zorder>pushButtonPause</zorder>
    <zorder>pushButtonPlay</zorder>
-   <zorder>pushButtonReplayType</zorder>
    <zorder>tabWidget</zorder>
-   <zorder>pushButonAlbumImage</zorder>
-   <zorder>pushButtonABReparation</zorder>
    <zorder>labelSoundVolume</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>pushButtonMutedSet</zorder>
    <zorder>horizontalSliderVolume</zorder>
    <zorder>pushButtonWindowClose</zorder>
-   <zorder>pushButtonShowWindowAudioEffect</zorder>
    <zorder>verticalLayoutWidget</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>widget</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

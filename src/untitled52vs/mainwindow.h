@@ -22,6 +22,7 @@
 #include "reparationFragment.h"
 #include "contextmenutabwidget.h"
 #include "contextmenuopenfile.h"
+#include "contextmenuglobal.h"
 #include "vkauth.h"
 #include "bass.h"
 #include "cstring"
@@ -32,6 +33,7 @@
 #include "bufferengwindow.h"
 #include "playlistmeneger.h"
 #include "dialogrenameplaylist.h"
+#include "settingmanager.h"
 
 
 namespace Ui {
@@ -56,6 +58,7 @@ public slots:
     void slotPlayFileList(QModelIndex x, QStringList str);
     void slotPlayFileListBASS(QModelIndex x);
     void slotPlayFileListBASS(QModelIndex x, QStringList str);
+    void slotAddFileFileListAdress(QStringList list);
     void slotStopFile();
     void slotPositionProgress(qint64 x);
     void slotPositionProgress(QWORD x);
@@ -81,17 +84,17 @@ public slots:
     void slotChangeStatusPlayer(int status);
     void slotShowWindowAudioEffect();
     void slotShowWindowBuffereng(int status); //отображает окно о выполнении буферации. 0- начало, 1- конец
+    void slotShowSettingsWindow();
+    void slotLoadCover(QString file);
 
 signals:
     void signalPlayReparation(qint64 rep, ReparationFragment &repFrag);
 private slots:
-    void setFormStyle();
+    void slotShowContextMenuGlobal(QPoint point);
 
 protected:
    virtual void  mousePressEvent(QMouseEvent *event);
    virtual void mouseMoveEvent(QMouseEvent *event);
-   virtual void paintEvent(QPaintEvent *event);
-
 private:
     Ui::MainWindow         *ui;
     QString                     *m_fileAdress;
@@ -109,12 +112,14 @@ private:
     int                              m_BASSPositionPlay;
     ContextMenuTabWidget *m_ContextMenuTabWidget;
     ContextMenuOpenFile *m_ContextMenuOpenFile;
+    ContextMenuGlobal *m_contextMenuGlobal;
     DWORD                       *m_streamMediaPlayer;
     MyMediaPlayer            *m_bassMediaPlayer;
     AudioEffectWindow      *m_audioEffectWindow;
     QPoint                           m_MouseEventDistance;
     FFTVisualWidget *m_fftvisualWidget;
     BufferengWindow *m_bufferengWindow;
+    SettingManager *m_settingMenger;
 };
 
 #endif // MAINWINDOW_H

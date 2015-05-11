@@ -4,6 +4,22 @@
 MyCondextMenu::MyCondextMenu(QWidget *parent) : QMenu(parent)
 {
     QAction * actionAddFile = new QAction(tr("Добавить в плейлист"), this);
+     addAction(actionAddFile);
+    QAction *actionAddFileLocal = new QAction(tr("Открыть локальный файл"), this);
+    QAction *actionAddFileLocalFolder = new QAction(tr("Открыть папку"), this);
+    QAction *actionAddFileVk = new QAction(tr("ВКонтакте"), this);
+    QAction *actionAddFileNetwork = new QAction(tr("Открыть по URL"), this);
+    QMenu *menuContextAddFile = new QMenu(this);
+    menuContextAddFile->addAction(actionAddFileLocal);
+    menuContextAddFile->addAction(actionAddFileLocalFolder);
+    menuContextAddFile->addAction(actionAddFileVk);
+    menuContextAddFile->addAction(actionAddFileNetwork);
+    actionAddFile->setMenu(menuContextAddFile);
+    connect(actionAddFileLocal, SIGNAL(triggered()), SIGNAL(signalAddFileAddFileLocal()));
+    connect(actionAddFileLocalFolder, SIGNAL(triggered()), SIGNAL(signalAddFileAddFileLocalFolder()));
+    connect(actionAddFileVk, SIGNAL(triggered()), SIGNAL(signalAddFileAddFileVk()));
+    connect(actionAddFileNetwork, SIGNAL(triggered()), SIGNAL(signalAddFileAddFileNetwork()));
+
     QAction *actionDeleteFile = new QAction(tr("Удалить "), this);
     QAction *actionInfo = new QAction(tr("Информация о треке"), this);
     QAction *actionInfoAutor = new QAction(tr("Информация о исполнителе"), this);
@@ -12,7 +28,6 @@ MyCondextMenu::MyCondextMenu(QWidget *parent) : QMenu(parent)
     QAction *actionTextTrack = new QAction(tr("Найти текст песни"), this);
     QAction *actionCopyBuffer = new QAction(tr("Копировать в буфер обмена"), this);
 
-    addAction(actionAddFile);
     addAction(actionDeleteFile);
     addSeparator();
     addAction(actionInfo);
@@ -24,7 +39,6 @@ MyCondextMenu::MyCondextMenu(QWidget *parent) : QMenu(parent)
 
 
     connect(actionInfo, SIGNAL(triggered()), SLOT(slotFileInfo()));
-    connect(actionAddFile, SIGNAL(triggered()), SLOT(slotAddFileAtPlaylist()));
     connect(actionDeleteFile, SIGNAL(triggered()), SLOT(slotDeleteTrack()));
     connect(actionOpenDisck, SIGNAL(triggered()), SLOT(slotOpenAtFileMeneger()));
     connect(actionSort, SIGNAL(triggered()), SLOT(slotSort()));
@@ -57,11 +71,6 @@ int MyCondextMenu::retIndexItem()
 void MyCondextMenu::slotFileInfo()
 {
     emit signalFileInfo(m_ItemIndex);
-}
-
-void MyCondextMenu::slotAddFileAtPlaylist()
-{
-    emit signalAddFileAtPlaylist();
 }
 
 void MyCondextMenu::slotDeleteTrack()
