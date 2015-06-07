@@ -7,9 +7,11 @@ DialogRenamePlaylist::DialogRenamePlaylist(QTabWidget *tw, int index, QWidget *p
 {
     ui->setupUi(this);
     name = "";
+    cancelflag = false;
+    ui->lineEdit->setText(QDateTime::currentDateTime().toString("d-MM-yy h-mm-s"));
     setWindowTitle(tr("Имя плэлиста"));
     connect(ui->pushButtonRename, SIGNAL(clicked()), SLOT(slotRename()));
-    connect(ui->pushButtonCancel, SIGNAL(clicked()), SLOT(close()));
+    connect(ui->pushButtonCancel, SIGNAL(clicked()), SLOT(slotCancel()));
 }
 
 DialogRenamePlaylist::~DialogRenamePlaylist()
@@ -22,6 +24,11 @@ QString DialogRenamePlaylist::newName()
     return name;
 }
 
+bool DialogRenamePlaylist::isCancel()
+{
+    return cancelflag;
+}
+
 void DialogRenamePlaylist::slotRename()
 {
     for(int i = 0; i < tabWidget->count(); ++i)
@@ -30,7 +37,14 @@ void DialogRenamePlaylist::slotRename()
             QMessageBox::warning(this, tr("Внимание"), tr("Плэйлист с таким именем уже существует"));
             return;
         }
-    //tabWidget->setTabText(indexTab, ui->lineEdit->text());
+    if(!ui->lineEdit->text().size())
+        ui->lineEdit->setText(QDateTime::currentDateTime().toString("d-MM-yy h-mm-s"));
     name =  ui->lineEdit->text();
+    close();
+}
+
+void DialogRenamePlaylist::slotCancel()
+{
+    cancelflag = true;
     close();
 }

@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     myqslider.cpp \
     progressbarmusic.cpp \
     settingmanager.cpp \
-    contextmenuglobal.cpp
+    contextmenuglobal.cpp \
+    opensource.cpp
 
 HEADERS  += mainwindow.h \
     trackListMeneger.h \
@@ -64,7 +65,8 @@ HEADERS  += mainwindow.h \
     myqslider.h \
     progressbarmusic.h \
     settingmanager.h \
-    contextmenuglobal.h
+    contextmenuglobal.h \
+    opensource.h
 
 FORMS    += mainwindow.ui \
     tracklistformat.ui \

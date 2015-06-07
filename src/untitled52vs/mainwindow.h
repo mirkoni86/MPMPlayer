@@ -34,6 +34,7 @@
 #include "playlistmeneger.h"
 #include "dialogrenameplaylist.h"
 #include "settingmanager.h"
+#include "opensource.h"
 
 
 namespace Ui {
@@ -50,7 +51,7 @@ public:
 public slots:
     void slotOpenFile();
     void slotOpenPlaylist();
-    void slotOpenFolderFileList();
+    void slotOpenFolder();
     void slotOpenVKPlaylist();
     void slotPlayFile();
     void slotPlayFileBASS(QString file);
@@ -113,7 +114,6 @@ private:
     ContextMenuTabWidget *m_ContextMenuTabWidget;
     ContextMenuOpenFile *m_ContextMenuOpenFile;
     ContextMenuGlobal *m_contextMenuGlobal;
-    DWORD                       *m_streamMediaPlayer;
     MyMediaPlayer            *m_bassMediaPlayer;
     AudioEffectWindow      *m_audioEffectWindow;
     QPoint                           m_MouseEventDistance;

@@ -7,6 +7,8 @@
 #include <QListWidgetItem>
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QtXml/QXmlInputSource>
+#include <QtXml/QXmlSimpleReader>
 #include "myqlistwidget.h"
 #include "mymediaplayer.h"
 #include "mycondextmenu.h"
@@ -21,10 +23,9 @@ public:
     explicit PlaylistMeneger(QTabWidget *tabwgt, QWidget *parent = 0);
     ~PlaylistMeneger();
     void addPlaylist(QStringList listElement, QString listName);
-    void addElement(QStringList &listElement);
     MyQListWidget* getPlaylistWidget(QString key);
     QStringList* getPlaylist(QString key);
-    void xmlPlaylistReaderTest(QFile *file);
+    bool playlistXMLParse(const QString &d);
     void formingViewPlaylist(QFile &xmlPlaylist, QStringList &listElement, QString listName, int begin = 0);
 signals:
     void signalClickItemPlaylistWidget(QModelIndex index, QStringList list);

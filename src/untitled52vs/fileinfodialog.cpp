@@ -22,7 +22,7 @@ FileInfoDialog::FileInfoDialog(QString adress, QWidget *parent) :
    else if(fileInfo->size() >= 1024 && fileInfo->size() < 1024 * 1024)
        ui->labelSizeFile->setText(QString::number((float) fileInfo->size() / 1024) + tr("  КБайт"));
    else if(fileInfo->size() >= 1024*1024 && fileInfo->size() < 1024*1024*1024)
-       ui->labelSizeFile->setText(QString::number((float) fileInfo->size() / 1024 / 1024 ) + tr(" МБайт"));
+       ui->labelSizeFile->setText(QString::number( ( float) ( fileInfo->size() / 1024 / 1024 ) ) + tr(" МБайт"));
   else if(fileInfo->size() >= 1024*1024*1024 && fileInfo->size() < 1024*1024*1024*1024)
        ui->labelSizeFile->setText(QString::number((float) fileInfo->size() /1024 /1024 / 1024) + tr(" ГБайт"));
    else ui->labelSizeFile->setText(QString::number((float) fileInfo->size() /1024 /1024 / 1024 / 1024) + tr(" ТБайт"));

@@ -6,7 +6,7 @@
 #include <QTableWidget>
 #include <QDebug>
 #include <QMessageBox>
-
+#include <QDateTime>
 namespace Ui {
 class DialogRenamePlaylist;
 }
@@ -19,13 +19,17 @@ public:
     explicit DialogRenamePlaylist(QTabWidget *tw, int index = 0,QWidget *parent = 0);
     ~DialogRenamePlaylist();
     QString newName();
+    bool isCancel();
 public slots:
     void slotRename();
+private slots:
+    void slotCancel();
 private:
     Ui::DialogRenamePlaylist *ui;
     QTabWidget *tabWidget;
     QString name;
     int indexTab;
+    bool cancelflag;
 
 };
 

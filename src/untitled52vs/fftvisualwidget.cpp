@@ -18,16 +18,19 @@ void FFTVisualWidget::setData(const QVector<unsigned short> &data)
     if(m_polygon.size())
         m_polygon.clear();
     m_data = data;
-    const float CONST_SHORT_POS = 65536 / 4 / ( (!height()) ? 1 : height() ) ; // Константное значение для оптимального расположения точек
+   const float CONST_SHORT_POS = 65536 / 4 / ( (!height()) ? 1 : height() ) ; // Константное значение для оптимального расположения точек
                                                                                           // расчитывается путем максмиальное значение data / высоту виджета
+//    const double CONST_SHORT_POS = (double) height() / 65535.0;
 
     //Ростановка точек
    for(int i = 0; i < MAX_DATA; ++i)
     {
-       //qDebug() << m_pointXY0[i].y() << " ";
+//       if(i == 0)
+//           qDebug() << CONST_SHORT_POS;
        m_pointXY0[i].setX(i);
        m_pointXY1[i].setX(i);
        m_pointXY0[i].setY(height() -  static_cast<int>( m_data.at(i)  / CONST_SHORT_POS) );
+ //          m_pointXY0[i].setY(height() -  static_cast<int>( pow( m_data.at(i) ,  CONST_SHORT_POS) ));
        m_pointXY1[i].setY(height());
     }
 
@@ -44,8 +47,8 @@ void FFTVisualWidget::paintEvent(QPaintEvent *event)
        painter.setPen(QPen(Qt::white, 1, Qt::SolidLine, Qt::RoundCap,Qt::MiterJoin));
        //painter.drawPolygon(m_polygon);
 
-       const int BEGIN_SELECTION = 127; // Позиция с которой начинается выборка данных
-       const int STEP_SELECTION = 6;       //Шаг выборки
+       const int BEGIN_SELECTION = 1; // Позиция с которой начинается выборка данных
+       const int STEP_SELECTION = 256/width();       //Шаг выборки
 
        for(int i = BEGIN_SELECTION; i < MAX_DATA; i += STEP_SELECTION )
        {
@@ -74,6 +77,8 @@ void FFTVisualWidget::paintEvent(QPaintEvent *event)
                    m_pointXY0[i].setY( (m_pointXY0[i].y() ) + 44);
                else  if(m_pointXY0[i].y() > 17)
                    m_pointXY0[i].setY( (m_pointXY0[i].y() ) + 46);
+
+           //m_pointXY0[i].setY( powf(m_pointXY0[i].y(), 1.48f ) );
 
            if(m_pointXY0[i].x() < 0 || m_pointXY0[i].y() < 0 ||
                m_pointXY1[i].x() < 0 || m_pointXY1[i].y() < 0)
